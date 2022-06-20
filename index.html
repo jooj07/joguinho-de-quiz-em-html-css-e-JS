@@ -1,20 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="index.js"></script>
+    <script type="module" defer src="main.js"></script>
+    <!-- defer -> inicia o js qnd o html é carregado -->
 </head>
 
-<body>
 
+<body id="corpo">
+    <div id="alerta" class="hide h3 text-center alert alert-danger" role="alert">
+        teste
+    </div>
+    <nav class="navbar navbar-expand-lg bg-none">
+        <div class="container-fluid">
+            <h1 class="display-4 fw-bold ">Quiz cards</h1>
+            <p id="contador" class="hide h3">0 pontos</p>
+        </div>
+    </nav>
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+        <!-- cardPerguntas -->
+        <div id="card-da-pergunta" class="hide mt-5 card bg-dark text-white text-center sombra rounded-lg" style=" 
+        width: 450px;
+        height: 350px;
+        ">
+            <img src="./assets/img.jpg" id="foto" class="img-fluid" alt="..." style="height: 100%; opacity: 0.4">
+            <div class="card-img-overlay px-0 pt-5 d-flex align-items-center align-self-center flex-column overflow-auto"
+                style="height: 100%;">
+                <p id="texto-pergunta" class="flex-grow-1  pt-5  card-text text-black h4 fw-semibold text-break mt-2">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, voluptatum?
+                </p>
+                <div class="card-footer btn-grid">
+                    <div id="botao-1" class=" btn text-wrap btn-sm btn-primary">Go somewhere</div>
+                    <div id="botao-2" class=" btn text-wrap btn-sm btn-primary">Go somewhere</div>
+                    <div id="botao-3" class=" btn text-wrap btn-sm btn-primary">Go somewhere</div>
+                    <div id="botao-4" class=" btn text-wrap btn-sm btn-primary">Go somewhere</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- card Inicial  -->
+        <div id="card-inicio" class="mt-5 sombra card text-center" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Bem-vindo ao quiz</h5>
+                <p>Serão 10 perguntas de conhecimentos gerais e cultura pop! Divirta-se</p>
+                <a href="#" id="iniciar" class="btn btn-primary" onclick="iniciarJogo()">Iniciar!</a>
+            </div>
+        </div>
+
+        <!-- card final  -->
+        <div id="card-final" class="mt-5 sombra hide card text-center" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Obrigado por responder !</h5>
+                <h2 id="pontuacao-final"></h2>
+                <button type="button" class="mt-4 btn btn-secondary btn-lg" onclick="reset()">
+                    Voltar ao início
+                </button>
+            </div>
+        </div>
+
+        <!-- botão voltar -->
+        <button type="button" id="voltar" class="mt-4 hide btn btn-secondary btn-lg" onclick="reset()">
+            Voltar ao início
+        </button>
 </body>
 
 </html>
