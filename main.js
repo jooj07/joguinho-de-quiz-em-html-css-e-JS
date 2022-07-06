@@ -26,7 +26,6 @@ function inserirPerguntaNoCard() {
   botao4.classList.remove("hide");
   botao1.classList.remove("hide");
   botao2.classList.remove("hide");
-  console.log(perguntaAtual);
   if (perguntaAtual < quantidadePerguntas) {
     // haverão perguntas com 4 ou 2 alternativas
     if (perguntas[perguntaAtual].botoes.length === 2) {
@@ -48,7 +47,6 @@ function inserirPerguntaNoCard() {
       imagem.src = "./assets/img.jpg";
     }
   } else {
-    console.log("acabou");
     container.classList.add("hide");
     cardFinal.classList.remove("hide");
     pontuacaoFinal.innerHTML = `Você fez ${pontos} pontos!`;
